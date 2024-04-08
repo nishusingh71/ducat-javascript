@@ -204,26 +204,36 @@ let ts = new Testings();
 console.log(ts);
 
 //Private 
-class E{
+class E {
     //public properties
-    firstName="jhon";
-    lastName="Doe";
+    firstName = "jhon";
+    lastName = "Doe";
     //private
-    #salary=10000;
+    #salary = 10000;
     //public methods
-    getFullName(){
-        this.#getSalary();
+    getFullName() {
+        // this.#getSalary();
         console.log(this.#salary);
-        console.log(this.firstName+" "+this.lastName);
+        console.log(this.firstName + " " + this.lastName);
     }
     //private Methods
-    #getSalary(){
+    #getSalary() {
         this.#getSalary();
         console.log(this.#salary);
     }
 }
-let e=new E();
+let e = new E();
 console.log(e.firstName);
 console.log(e.lastName);
 e.getFullName();
-e.#sal
+
+// instanceof
+class AB {
+
+}
+class BC {
+
+}
+let ab = new AB();
+let bc = new BC();
+console.log(bc instanceof BC);
