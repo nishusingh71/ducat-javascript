@@ -164,3 +164,66 @@ class C extends P {
 }
 let c = new C();
 c.getClassName();
+//Static  properties and Methods
+class Emp {
+    static counter = 0;
+    constructor() {
+        Emp.counter++;
+    }
+    static getCount() {
+        console.log(Emp.counter);
+        console.log(this.counter);
+    }
+}
+let emp4 = new Emp();
+let emp5 = new Emp();
+let emp6 = new Emp();
+let emp7 = new Emp();
+console.log(Emp.counter);
+Emp.getCount();
+
+class A {
+    static className = "Parent Class";
+    static getClassName() {
+        console.log("A class getName");
+    }
+
+}
+class B extends A {
+
+}
+console.log(B.className);
+B.getClassName();
+
+//Class Expression
+let Testings = class {
+    className = "Testing";
+
+}
+let ts = new Testings();
+console.log(ts);
+
+//Private 
+class E{
+    //public properties
+    firstName="jhon";
+    lastName="Doe";
+    //private
+    #salary=10000;
+    //public methods
+    getFullName(){
+        this.#getSalary();
+        console.log(this.#salary);
+        console.log(this.firstName+" "+this.lastName);
+    }
+    //private Methods
+    #getSalary(){
+        this.#getSalary();
+        console.log(this.#salary);
+    }
+}
+let e=new E();
+console.log(e.firstName);
+console.log(e.lastName);
+e.getFullName();
+e.#sal
