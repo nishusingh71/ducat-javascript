@@ -31,3 +31,19 @@ let sum = addition(10, 20);
 console.log(sum.next());
 console.log(sum.next());
 console.log(sum.next());
+
+//CallBack Hell
+function testing(Callback) {
+    Callback()
+}
+testing(function () {
+    console.log("testing 1");
+    testing(function () {
+        console.log("testing 2");
+        testing(function () {
+            console.log("testing 3");
+
+        })
+    })
+
+})
