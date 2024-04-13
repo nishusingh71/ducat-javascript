@@ -1,3 +1,4 @@
+"use strict"
 // toString(base)
 let n = 10;
 console.log(n.toString(2)); //1010
@@ -89,3 +90,118 @@ console.log(str2);
 console.log(str3);
 
 //String length
+str1 = "Nishu Singh"
+console.log(str1.length);
+//Acessing Character
+console.log(str1[2]);
+//Strings are Immutable
+str1 = "DUCAT"
+str1 = "DuCATS"
+console.log(str1);
+// str1[2] = "W";
+// console.log(str1);
+//toUpperCase() & toLowerCase()
+console.log(str1.toUpperCase());
+console.log(str1.toLowerCase());
+//Searching for
+//indexOf()
+fullName = "Nishu Singh"
+console.log(fullName.indexOf('s'));
+console.log(fullName.indexOf('w'));
+console.log(fullName.indexOf('shu'));
+console.log(fullName.indexOf('sim'));
+//lastIndexOf(Right-to-left)
+fullName = "Nishu Singh"
+console.log(fullName.lastIndexOf('s'));
+console.log(fullName.lastIndexOf('w'));
+console.log(fullName.lastIndexOf('shu'));
+console.log(fullName.lastIndexOf('sim'));
+//includes
+fullName = "Nishu Singh"
+console.log(fullName.includes('s'));
+console.log(fullName.includes('w'));
+console.log(fullName.includes('shu'));
+console.log(fullName.includes('sim'));
+//startWiith
+fullName = "Nishu Singh"
+console.log(fullName.startsWith('n'));
+console.log(fullName.startsWith('w'));
+console.log(fullName.startsWith('shu'));
+console.log(fullName.startsWith('sim'));
+//endsWith
+fullName = "Nishu Singh"
+console.log(fullName.endsWith('s'));
+console.log(fullName.endsWith('w'));
+console.log(fullName.endsWith('shu'));
+console.log(fullName.endsWith('sim'));
+//Slice
+fullName = "Nishu Singh"
+console.log(fullName.slice(0, 6));
+console.log(fullName.slice(2, 6));
+console.log(fullName.slice(6));
+console.log(fullName.slice(0, -1));
+console.log(fullName.slice(-1, -1));
+console.log(fullName.slice(-2, -1));
+//subStrings
+fullName = "Nishu Singh"
+console.log(fullName.substring(0, 6));
+console.log(fullName.substring(2, 6));
+console.log(fullName.substring(2));
+console.log(fullName.substring(0, -1));
+console.log(fullName.substring(-2, 5));
+
+//substr-deprected
+//Compare
+str1 = "Hello"
+str2 = "Hello"
+console.log(str1 === str2);
+console.log(str1 > str2);
+console.log(str1 >= str2);
+console.log(str1 < str2);
+console.log(str1 <= str2);
+console.log(str1 !== str2);
+
+//codePointAt 
+str1 = "DUCAT"
+for (const charcter of str1) {
+    console.log(charcter, charcter.codePointAt());
+}
+
+//Arrays
+let arr = [10, 20, 30, 40, 50, 60];
+console.log(arr);
+// let array=new Array(10);
+//Array.of
+arr = Array.of(10, 30, 40, 50, 60);
+console.log(arr);
+//Array.from
+// arr = Array.from(10, 20, 30, 40, 50);
+// console.log(arr);
+//Multidimensional Array(2D)
+arr = [[10, [100]], [30, 40]];
+console.log(arr);
+console.log(arr[0][0]);
+console.log(arr[0][1]);
+
+//toString
+arr = [10, 20, 30, 40, 50];
+console.log(arr.toString());
+//Add/remove
+//Array.push()
+let res = arr.push(100, 200, 300, 400);
+console.log(res);
+//Array.pop()
+res = arr.pop();
+console.log(arr, res);
+//Array.unshift()
+res = arr.unshift(1000, 2000, 3000);
+console.log(arr, res);
+//Array.shift()
+res = arr.shift();
+console.log(arr, res);
+//Splice
+res = arr.splice(2, 0);
+res = arr.splice(-2, 1);
+res = arr.splice(arr.length - 1, 1);
+res = arr.splice(0, 1);
+console.log(arr, res);
