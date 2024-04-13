@@ -205,3 +205,206 @@ res = arr.splice(-2, 1);
 res = arr.splice(arr.length - 1, 1);
 res = arr.splice(0, 1);
 console.log(arr, res);
+//update
+arr = [10, 20, 30, 40, 50, 60];
+res = arr.splice(2, 1, 300);
+console.log(arr, res);
+res = arr.splice(2, 2, 300, 400);
+console.log(arr, res);
+//add
+arr = [10, 20, 30, 40, 50]
+res = arr.splice(2, 0, 300, 400, 500, 600);
+console.log(arr, res);
+res = arr.splice(arr.length, 0, 300, 400, 500, 600);
+console.log(arr, res);
+res = arr.splice(0, 0, 300, 400, 500, 600);
+console.log(arr, res);
+
+//Slice
+arr = [10, 20, 30, 40, 50, 60];
+console.log(arr.slice(0, 3));
+console.log(arr.slice(2));
+console.log(arr.slice(0, -1));
+console.log(arr.slice(-1, -1));
+console.log(arr.slice(-1, -2));
+//concat
+arr = [10, 20, 30, 40, 50];
+let arr1 = [60, 70, 80, 90, 100];
+console.log(arr.concat(arr1));
+//Iterate: forEach->method
+arr = [10, 20, 30, 40, 50, 60];
+arr.forEach((value, index, arr) => {
+    console.log(value, index, arr);
+})
+//Searching in array
+//indexOf/lastIndexOf
+arr = [10, 20, 30, 40, 50, 60];
+console.log(arr.indexOf(10));
+console.log(arr.indexOf(100));
+console.log(arr.lastIndexOf(10));
+console.log(arr.lastIndexOf(100));
+//includes
+console.log(arr.includes(10));
+console.log(arr.includes(100));
+//find and findIndex/findLastIndex
+arr = [10, 20, 30, 40, 50, 60];
+res = arr.find((value, index, arr) => {
+    console.log(value, index, arr);
+    if (value === 30) {
+        return value;
+    }
+})
+console.log(res);
+//findIndex
+arr = [10, 20, 30, 40, 50, 60];
+res = arr.findIndex((value, index, arr) => {
+    console.log(value, index, arr);
+    if (value === 30) {
+        return value;
+    }
+})
+console.log(res);
+//findLastIndex
+arr = [10, 20, 30, 40, 50, 60];
+res = arr.findLastIndex((value, index, arr) => {
+    console.log(value, index, arr);
+    if (value === 30) {
+        return value;
+    }
+})
+console.log(res);
+//filter
+arr = [10, 20, 30, 40, 50, 60];
+res = arr.filter((value, index, arr) => {
+    console.log(value, index, arr);
+    if (value === 30 || value === 40 || value === 50) {
+        return value;
+    }
+})
+console.log(res);
+//Real Example of filter
+let emp = [{ name: 'deepak', department: 'trainer' },
+{ name: 'Nishu', department: 'trainer' },
+{ name: 'Rohit', department: 'Developer' },
+{ name: 'Nitin', department: 'Devops' }];
+res = emp.filter(emp => emp.department !== 'trainer');
+console.log(res);
+//sort (fn)
+arr = [30, 60, 80, 54];
+console.log(arr.sort());
+//reverse
+console.log(arr.reverse());
+//split & join
+//join
+arr = [10, 20, 30, 40, 50, 60];
+console.log(arr.join('|'));
+//join array to string convert
+let stringArr = arr.join('|');
+//split based on spliter string to access converting
+console.log(stringArr.split('|'));
+
+//Reduce / ReduceRight
+arr.reduce((preValue, currValue) => {
+    console.log(preValue, currValue);
+    return preValue + currValue;
+})
+//ReduceRight
+let sum = arr.reduceRight((preValue, currValue) => {
+    console.log(preValue, currValue);
+    return preValue + currValue;
+}, 0)
+console.log({ sum });
+//Array.isArray
+arr = 10;
+console.log(Array.isArray(arr));
+
+// Iterables
+arr = [10, 20, 30, 40, 50];
+for (const value of arr) {
+    console.log(value);
+}
+//Object is not iterables
+//String
+str1 = "DUCAT";
+for (const value of str1) {
+    console.log(value);
+}
+//Map
+//new Map()
+let map = new Map();
+//map.set(key,value)-stores the value by the key
+console.log(map.set(1, 10));
+console.log(map.set(true, true));
+console.log(map.set("firstName", "john"));
+console.log(map.set([10, 20], [10, 20]));
+console.log(map.set({ key: "FirstName" }, { value: "Nishu" }));
+
+//map.get(key)
+console.log(map.get('firstName'));
+//map.has(key)
+console.log(map.has('firstName'));
+//map.delete(key)
+console.log(map.delete('firstName'));
+//map.clear()
+map.clear();
+//map.size
+console.log(map.size);
+
+//Iteration over map
+map = new Map();
+console.log(map.set('firstName', 'john'));
+console.log(map.set('lastName', 'Doe'));
+//map.key()
+console.log(map.keys());
+for (const value of map.keys()) {
+    console.log(value);
+}
+//map.value()
+console.log(map.values());
+for (const value of map.values()) {
+    console.log(value);
+}
+//map.entries()
+console.log(map.entries());
+for (const value of map.entries()) {
+    console.log('key' + value[0]);
+    console.log('value' + value[1]);
+}
+//Set
+let set = new Set();
+//add
+set.add(10);
+set.add(20);
+set.add(30);
+//delete
+console.log(set.delete(100));
+console.log(set);
+//has
+console.log(set.has(100));
+//clear
+set.clear();
+console.log(set);
+//size
+console.log(set.size);
+//Iteration
+set = new Set([10, 20, 30, 40, 50]);
+for (const value of set) {
+    console.log(value);
+}
+//WeakMap & WeakSet
+let weakMap = new WeakMap();
+let obj = weakMap.set({ key: 'firstName' });
+weakMap.set(obj, 'deepak')
+console.log(weakMap.get({ key: 'firstName' }));
+console.log(weakMap.delete(obj));
+console.log(weakMap.has(obj));
+//WeakSet
+let weakSet = new WeakSet();
+//add
+obj = { key: 'deepak' };
+weakSet.add(obj);
+//delete
+weakSet.delete(obj);
+console.log(weakSet);
+//weakSet.has(key)
+console.log(weakSet.has(obj));
