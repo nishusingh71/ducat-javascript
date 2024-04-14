@@ -408,3 +408,83 @@ weakSet.delete(obj);
 console.log(weakSet);
 //weakSet.has(key)
 console.log(weakSet.has(obj));
+//Object.key(),value,entries
+obj = {
+    firstName: 'john',
+    lastName: 'Doe',
+    age: 10
+}
+console.log(Object.keys(obj));
+for (const value of Object.keys(obj)) {
+    console.log(value);
+}
+console.log(Object.keys, Object.values);
+for (const value of Object.values(obj)) {
+    console.log(value);
+}
+console.log(Object.entries(obj));
+for (const value of Object.entries(obj)) {
+    console.log('key' + value[0]);
+    console.log('value' + value[1]);
+}
+
+//Destructuring Assignment
+//Array
+// arr=[10,20,30]
+// a=arr[0];
+// let b=arr[1];
+// let c=arr[2];
+// console.log(a,b,c);
+//Destructuring
+let [b, c, d] = arr;
+console.log(a, b, c);
+//default value set
+[b, , c, d = 0] = arr;
+console.log(b, c, d);
+//subarray using rest operator
+
+arr = [10, 20, 30, 40, 50, 60, 70]
+let [e, f, ...nums] = arr;
+console.log(e, f, nums);
+//Real Time Example
+function addition(num1, num2) {
+    console.log(num1 + num2);
+}
+addition(10, 20)
+
+//dynamic value
+function adds(...nums) {
+    sum = 0;
+    for (const value of nums) {
+        sum += value;
+    }
+   
+}
+console.log(sum);
+
+//Object Destructuring
+obj={
+    firstname:'john',
+    lastname:'Smith',
+    age:10,
+}
+let {firstname,lastname,age,hobbies}=obj;
+console.log(firstname,lastname,age,hobbies);
+//Rest Operator for sub Object
+let{firstnames,...objs}=obj;
+console.log(firstnames,objs);
+//Rename by destructors
+let{age:z}=obj; //Level 1
+console.log(z);
+// let{age:x,name:{firstname:fname}}=obj; //Level 2
+// console.log(x,fname);
+//nested Destructuring
+obj={name:{
+fn:'john',
+ln:'Smith',
+},
+age:10,
+}
+let{name:{fn,ln}}=obj;
+console.log(fn,ln);
+
