@@ -54,7 +54,7 @@ let descriptor=Object.getOwnPropertyDescriptor(obj,'firstName');
 console.log(descriptors);
 console.log(descriptor);
 // Object Creation
-obj.firstName="Nishu"
+Object.firstName="Nishu"
 console.log(obj);
 //writeable
 Object.getOwnPropertyDescriptor(obj,'firstName',{
@@ -62,3 +62,20 @@ Object.getOwnPropertyDescriptor(obj,'firstName',{
 })
 obj.firstName="deepak";
 console.log(obj);
+//delete
+delete Object.firstName;
+console.log(obj);
+//enumerable
+obj={
+    firstName:'john',
+    lastName:'Doe',
+    age:10,
+}
+Object.defineProperty(obj,'firstName',{
+    enuerable:false
+})
+console.log(obj.firstName);
+for(const key in Object){
+    console.log(key,obj[key]);
+}
+
