@@ -146,3 +146,88 @@ let obj2 = { ...obj, hobbies: ['cricket'] }
 console.log(obj);
 console.log(obj2);
 console.log(obj === obj2);
+//varibale scope
+//Nested function
+//Lexical Environment
+
+//Redeclaration
+let firstName = "deepak";
+{
+    let firstName = "suraj";
+}
+console.log(firstName);
+//IIFE
+// ()();
+async function getCountries() {
+    let response = await fetch('');
+    let data = await response.json();
+    return data;
+}
+(async function () {
+    let data = await getCountries();
+    console.log(data);
+})();
+// new Function
+
+// function adds(n1,n2){
+// console.log(n1+n2);
+// }
+// addition(10,20);
+
+let sum = new Function('a', 'b', 'return a + b');
+console.log(sum);
+
+//closure
+function testing() {
+    let a = 10;
+    let b = 20;
+    return () => {
+        console.log(a + b);
+    }
+
+}
+let t = testing();
+console.log(t);
+t();
+
+//Scheduling setTimeout & setInterval
+//setInterval
+// let counter=0;
+// setInterval(()=>{
+//     console.log(counter++);
+//     let data=new Date();
+//     console.log(`${data.getDate()}-${data.getMonth()}`);
+// },5000);
+
+// setTimeout
+setTimeout(() => {
+    console.log('setTimeout called..');
+}, 5000);
+
+//Clearing with clearTimeout
+// let counter = 0;
+// let interval = setInterval(() => {
+//     console.log(counter++);
+// }, 1000)
+// const clearTimeout = setTimeout(() => {
+//     clearInterval(interval)
+//     console.log("setTimeout called..");
+// }, 5000);
+// clearTimeout(clearTimeout);
+
+//Decorators & Forwarding, call/apply
+let object = {
+    firstName: 'john',
+    lastName: 'Doe',
+}
+let object2 = {
+    getFullName: function (age, hobbies) {
+        console.log(this);
+        console.log(this.firstName + '' + this.lastName + '' + age);
+        console.log(hobbies);
+    }
+}
+object2.getFullName.call(object, 10, 'Cricket');
+object2.getFullName.apply(object, 10, 'Cricket');
+console.log(object2);
+
